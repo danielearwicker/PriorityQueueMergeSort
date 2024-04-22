@@ -47,16 +47,18 @@ public static class SyncTest
         {
             var superLinq = new List<double>();
             var priorityQueue = new List<double>();
-
+            var updatablePriorityQueue = new List<double>();
+            
             for (var rep = 0; rep < 50; rep++)
             {
                 var source = Prepare(wholeListCount, chunkCount, generate);
 
                 superLinq.Add(TimeEnumeration(source.First().SortedMerge(source.Skip(1).ToArray())));
                 priorityQueue.Add(TimeEnumeration(source.First().PqSortedMerge(source.Skip(1).ToArray())));
+                updatablePriorityQueue.Add(TimeEnumeration(source.First().UpqSortedMerge(source.Skip(1).ToArray())));
             }
 
-            Console.WriteLine($"{chunkCount},{superLinq.Average()},{priorityQueue.Average()}");
+            Console.WriteLine($"{chunkCount},{superLinq.Average()},{priorityQueue.Average()},{updatablePriorityQueue.Average()}");
         }
     }
 }
