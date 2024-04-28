@@ -1,4 +1,4 @@
-﻿namespace PriorityQueueMergeSort;
+﻿namespace PriorityQueueMergeSort.Algorithms;
 
 using SuperLinq;
 using System;
@@ -545,12 +545,9 @@ public static class PriorityQueueSortedMergeExtensions
         {
             var enumerators = sources.Select(x => x.GetEnumerator()).ToList();
 
-            var queue = new PriorityQueue<IEnumerator<TSource>, TKey>(comparer);
-
-            foreach (var e in enumerators)
-            {
-                if (e.MoveNext()) queue.Enqueue(e, keySelector(e.Current));
-            }
+            var queue = new PriorityQueue<IEnumerator<TSource>, TKey>(
+                enumerators.Where(e => e.MoveNext()).Select(x => (x, keySelector(x.Current))),
+                comparer);
 
             try
             {

@@ -1,4 +1,4 @@
-﻿namespace PriorityQueueMergeSort;
+﻿namespace PriorityQueueMergeSort.Algorithms;
 
 using SuperLinq;
 using System.Runtime.CompilerServices;
@@ -417,8 +417,8 @@ public static class AsyncPriorityQueuePqSortedMergeExtensions
             comparer = new ReverseComparer<TKey>(comparer);
         }
 
-        return Impl(otherSequences.Prepend<IAsyncEnumerable<TSource>>(source), keySelector, comparer);
-        static async IAsyncEnumerable<TSource> Impl(IEnumerable<IAsyncEnumerable<TSource>> sources, Func<TSource, TKey> keySelector, IComparer<TKey> comparer, [EnumeratorCancellation] CancellationToken cancellationToken = default(CancellationToken))
+        return Impl(otherSequences.Prepend(source), keySelector, comparer);
+        static async IAsyncEnumerable<TSource> Impl(IEnumerable<IAsyncEnumerable<TSource>> sources, Func<TSource, TKey> keySelector, IComparer<TKey> comparer, [EnumeratorCancellation] CancellationToken cancellationToken = default)
         {
             var enumerators = sources.Select(x => x.GetAsyncEnumerator(cancellationToken)).ToList();
 

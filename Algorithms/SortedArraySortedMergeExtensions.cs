@@ -1,12 +1,11 @@
-﻿namespace PriorityQueueMergeSort;
+﻿namespace PriorityQueueMergeSort.Algorithms;
 
 using SuperLinq;
-using SuperLinq.Collections;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public static class UpdatablePriorityQueueSortedMergeExtensions
+public static class SortedArraySortedMergeExtensions
 {
     public static T Identity<T>(T x) => x;
 
@@ -41,13 +40,13 @@ public static class UpdatablePriorityQueueSortedMergeExtensions
     //     source or otherSequences is null.
     //
     // Remarks:
-    //     Using UpqSortedMerge on sequences that are not ordered or are not in the same order
+    //     Using SaSortedMerge on sequences that are not ordered or are not in the same order
     //     produces undefined results.
     //
     //     This method uses deferred execution and streams its results.
-    public static IEnumerable<TSource> UpqSortedMerge<TSource>(this IEnumerable<TSource> source, params IEnumerable<TSource>[] otherSequences)
+    public static IEnumerable<TSource> SaSortedMerge<TSource>(this IEnumerable<TSource> source, params IEnumerable<TSource>[] otherSequences)
     {
-        return source.UpqSortedMerge(OrderByDirection.Ascending, null, otherSequences);
+        return source.SaSortedMerge(OrderByDirection.Ascending, null, otherSequences);
     }
 
     //
@@ -78,7 +77,7 @@ public static class UpdatablePriorityQueueSortedMergeExtensions
     //     otherSequences is null.
     //
     // Remarks:
-    //     Using UpqSortedMergeDescending on sequences that are not ordered or are not in the
+    //     Using SaSortedMergeDescending on sequences that are not ordered or are not in the
     //     same order produces undefined results.
     //     This method uses deferred execution and streams its results.
     //     Here is an example of a merge, as well as the produced result:
@@ -86,13 +85,13 @@ public static class UpdatablePriorityQueueSortedMergeExtensions
     //     var s1 = new[] { 3, 7, 11 };
     //     var s2 = new[] { 2, 4, 20 };
     //     var s3 = new[] { 17, 19, 25 };
-    //     var merged = s1.UpqSortedMerge( OrderByDirection.Ascending, s2, s3 );
+    //     var merged = s1.SaSortedMerge( OrderByDirection.Ascending, s2, s3 );
     //     var result = merged.ToArray();
     //     // result will be:
     //     // { 2, 3, 4, 7, 11, 17, 19, 20, 25 }
-    public static IEnumerable<TSource> UpqSortedMergeDescending<TSource>(this IEnumerable<TSource> source, params IEnumerable<TSource>[] otherSequences)
+    public static IEnumerable<TSource> SaSortedMergeDescending<TSource>(this IEnumerable<TSource> source, params IEnumerable<TSource>[] otherSequences)
     {
-        return source.UpqSortedMerge(OrderByDirection.Descending, null, otherSequences);
+        return source.SaSortedMerge(OrderByDirection.Descending, null, otherSequences);
     }
 
     //
@@ -123,13 +122,13 @@ public static class UpdatablePriorityQueueSortedMergeExtensions
     //     source or otherSequences is null.
     //
     // Remarks:
-    //     Using UpqSortedMerge on sequences that are not ordered or are not in the same order
+    //     Using SaSortedMerge on sequences that are not ordered or are not in the same order
     //     produces undefined results.
     //
     //     This method uses deferred execution and streams its results.
-    public static IEnumerable<TSource> UpqSortedMerge<TSource>(this IEnumerable<TSource> source, IComparer<TSource>? comparer, params IEnumerable<TSource>[] otherSequences)
+    public static IEnumerable<TSource> SaSortedMerge<TSource>(this IEnumerable<TSource> source, IComparer<TSource>? comparer, params IEnumerable<TSource>[] otherSequences)
     {
-        return source.UpqSortedMerge(OrderByDirection.Ascending, comparer, otherSequences);
+        return source.SaSortedMerge(OrderByDirection.Ascending, comparer, otherSequences);
     }
 
     //
@@ -163,7 +162,7 @@ public static class UpdatablePriorityQueueSortedMergeExtensions
     //     otherSequences is null.
     //
     // Remarks:
-    //     Using UpqSortedMergeDescending on sequences that are not ordered or are not in the
+    //     Using SaSortedMergeDescending on sequences that are not ordered or are not in the
     //     same order produces undefined results.
     //     This method uses deferred execution and streams its results.
     //     Here is an example of a merge, as well as the produced result:
@@ -171,13 +170,13 @@ public static class UpdatablePriorityQueueSortedMergeExtensions
     //     var s1 = new[] { 3, 7, 11 };
     //     var s2 = new[] { 2, 4, 20 };
     //     var s3 = new[] { 17, 19, 25 };
-    //     var merged = s1.UpqSortedMerge( OrderByDirection.Ascending, s2, s3 );
+    //     var merged = s1.SaSortedMerge( OrderByDirection.Ascending, s2, s3 );
     //     var result = merged.ToArray();
     //     // result will be:
     //     // { 2, 3, 4, 7, 11, 17, 19, 20, 25 }
-    public static IEnumerable<TSource> UpqSortedMergeDescending<TSource>(this IEnumerable<TSource> source, IComparer<TSource>? comparer, params IEnumerable<TSource>[] otherSequences)
+    public static IEnumerable<TSource> SaSortedMergeDescending<TSource>(this IEnumerable<TSource> source, IComparer<TSource>? comparer, params IEnumerable<TSource>[] otherSequences)
     {
-        return source.UpqSortedMerge(OrderByDirection.Descending, comparer, otherSequences);
+        return source.SaSortedMerge(OrderByDirection.Descending, comparer, otherSequences);
     }
 
     //
@@ -208,13 +207,13 @@ public static class UpdatablePriorityQueueSortedMergeExtensions
     //     source or otherSequences is null.
     //
     // Remarks:
-    //     Using UpqSortedMerge on sequences that are not ordered or are not in the same order
+    //     Using SaSortedMerge on sequences that are not ordered or are not in the same order
     //     produces undefined results.
     //
     //     This method uses deferred execution and streams its results.
-    public static IEnumerable<TSource> UpqSortedMerge<TSource>(this IEnumerable<TSource> source, OrderByDirection direction, params IEnumerable<TSource>[] otherSequences)
+    public static IEnumerable<TSource> SaSortedMerge<TSource>(this IEnumerable<TSource> source, OrderByDirection direction, params IEnumerable<TSource>[] otherSequences)
     {
-        return source.UpqSortedMerge(direction, null, otherSequences);
+        return source.SaSortedMerge(direction, null, otherSequences);
     }
 
     //
@@ -248,13 +247,13 @@ public static class UpdatablePriorityQueueSortedMergeExtensions
     //     source or otherSequences is null.
     //
     // Remarks:
-    //     Using UpqSortedMerge on sequences that are not ordered or are not in the same order
+    //     Using SaSortedMerge on sequences that are not ordered or are not in the same order
     //     produces undefined results.
     //
     //     This method uses deferred execution and streams its results.
-    public static IEnumerable<TSource> UpqSortedMerge<TSource>(this IEnumerable<TSource> source, OrderByDirection direction, IComparer<TSource>? comparer, params IEnumerable<TSource>[] otherSequences)
+    public static IEnumerable<TSource> SaSortedMerge<TSource>(this IEnumerable<TSource> source, OrderByDirection direction, IComparer<TSource>? comparer, params IEnumerable<TSource>[] otherSequences)
     {
-        return source.UpqSortedMergeBy(Identity, direction, comparer, otherSequences);
+        return source.SaSortedMergeBy(Identity, direction, comparer, otherSequences);
     }
 
     //
@@ -288,13 +287,13 @@ public static class UpdatablePriorityQueueSortedMergeExtensions
     //     source, keySelector or otherSequences is null.
     //
     // Remarks:
-    //     Using UpqSortedMergeBy on sequences that are not ordered or are not in the same
+    //     Using SaSortedMergeBy on sequences that are not ordered or are not in the same
     //     order produces undefined results.
     //
     //     This method uses deferred execution and streams its results.
-    public static IEnumerable<TSource> UpqSortedMergeBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, params IEnumerable<TSource>[] otherSequences)
+    public static IEnumerable<TSource> SaSortedMergeBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, params IEnumerable<TSource>[] otherSequences)
     {
-        return source.UpqSortedMergeBy(keySelector, OrderByDirection.Ascending, null, otherSequences);
+        return source.SaSortedMergeBy(keySelector, OrderByDirection.Ascending, null, otherSequences);
     }
 
     //
@@ -335,12 +334,12 @@ public static class UpdatablePriorityQueueSortedMergeExtensions
     //     otherSequences is null.
     //
     // Remarks:
-    //     Using UpqSortedMergeByDescending on sequences that are not ordered or are not in
+    //     Using SaSortedMergeByDescending on sequences that are not ordered or are not in
     //     the same order produces undefined results.
     //     This method uses deferred execution and streams its results.
-    public static IEnumerable<TSource> UpqSortedMergeByDescending<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, params IEnumerable<TSource>[] otherSequences)
+    public static IEnumerable<TSource> SaSortedMergeByDescending<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, params IEnumerable<TSource>[] otherSequences)
     {
-        return source.UpqSortedMergeBy(keySelector, OrderByDirection.Descending, null, otherSequences);
+        return source.SaSortedMergeBy(keySelector, OrderByDirection.Descending, null, otherSequences);
     }
 
     //
@@ -377,13 +376,13 @@ public static class UpdatablePriorityQueueSortedMergeExtensions
     //     source, keySelector or otherSequences is null.
     //
     // Remarks:
-    //     Using UpqSortedMergeBy on sequences that are not ordered or are not in the same
+    //     Using SaSortedMergeBy on sequences that are not ordered or are not in the same
     //     order produces undefined results.
     //
     //     This method uses deferred execution and streams its results.
-    public static IEnumerable<TSource> UpqSortedMergeBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey>? comparer, params IEnumerable<TSource>[] otherSequences)
+    public static IEnumerable<TSource> SaSortedMergeBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey>? comparer, params IEnumerable<TSource>[] otherSequences)
     {
-        return source.UpqSortedMergeBy(keySelector, OrderByDirection.Ascending, comparer, otherSequences);
+        return source.SaSortedMergeBy(keySelector, OrderByDirection.Ascending, comparer, otherSequences);
     }
 
     //
@@ -427,12 +426,12 @@ public static class UpdatablePriorityQueueSortedMergeExtensions
     //     otherSequences is null.
     //
     // Remarks:
-    //     Using UpqSortedMergeByDescending on sequences that are not ordered or are not in
+    //     Using SaSortedMergeByDescending on sequences that are not ordered or are not in
     //     the same order produces undefined results.
     //     This method uses deferred execution and streams its results.
-    public static IEnumerable<TSource> UpqSortedMergeByDescending<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey>? comparer, params IEnumerable<TSource>[] otherSequences)
+    public static IEnumerable<TSource> SaSortedMergeByDescending<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey>? comparer, params IEnumerable<TSource>[] otherSequences)
     {
-        return source.UpqSortedMergeBy(keySelector, OrderByDirection.Descending, comparer, otherSequences);
+        return source.SaSortedMergeBy(keySelector, OrderByDirection.Descending, comparer, otherSequences);
     }
 
     //
@@ -470,13 +469,13 @@ public static class UpdatablePriorityQueueSortedMergeExtensions
     //     source, keySelector or otherSequences is null.
     //
     // Remarks:
-    //     Using UpqSortedMergeBy on sequences that are not ordered or are not in the same
+    //     Using SaSortedMergeBy on sequences that are not ordered or are not in the same
     //     order produces undefined results.
     //
     //     This method uses deferred execution and streams its results.
-    public static IEnumerable<TSource> UpqSortedMergeBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, OrderByDirection direction, params IEnumerable<TSource>[] otherSequences)
+    public static IEnumerable<TSource> SaSortedMergeBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, OrderByDirection direction, params IEnumerable<TSource>[] otherSequences)
     {
-        return source.UpqSortedMergeBy(keySelector, direction, null, otherSequences);
+        return source.SaSortedMergeBy(keySelector, direction, null, otherSequences);
     }
 
     //
@@ -517,11 +516,11 @@ public static class UpdatablePriorityQueueSortedMergeExtensions
     //     source, keySelector or otherSequences is null.
     //
     // Remarks:
-    //     Using UpqSortedMergeBy on sequences that are not ordered or are not in the same
+    //     Using SaSortedMergeBy on sequences that are not ordered or are not in the same
     //     order produces undefined results.
     //
     //     This method uses deferred execution and streams its results.
-    public static IEnumerable<TSource> UpqSortedMergeBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, OrderByDirection direction, IComparer<TKey>? comparer, params IEnumerable<TSource>[] otherSequences)
+    public static IEnumerable<TSource> SaSortedMergeBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, OrderByDirection direction, IComparer<TKey>? comparer, params IEnumerable<TSource>[] otherSequences)
     {
         ArgumentNullException.ThrowIfNull(source, "source");
         ArgumentNullException.ThrowIfNull(keySelector, "keySelector");
@@ -546,20 +545,36 @@ public static class UpdatablePriorityQueueSortedMergeExtensions
         {
             var enumerators = sources.Select(x => x.GetEnumerator()).ToList();
 
-            var queue = new UpdatablePriorityQueue<IEnumerator<TSource>, TKey>(comparer);
+            var list = new List<IEnumerator<TSource>>();
 
             foreach (var e in enumerators)
             {
-                if (e.MoveNext()) queue.Enqueue(e, keySelector(e.Current));
+                if (e.MoveNext()) list.Add(e);
             }
+
+            list.Sort((x, y) => comparer.Compare(keySelector(x.Current), keySelector(y.Current)));
+
+            var arr = list.ToArray();
+            var count = arr.Length;
+            var sourceComparer = new SourceComparer<TSource, TKey>(comparer, keySelector);
 
             try
             {
-                while (queue.TryDequeue(out var e, out var _))
+                while (count != 0)
                 {
+                    var e = arr[0];
+                    Array.Copy(arr, 1, arr, 0, --count);
+
                     yield return e.Current;
 
-                    if (e.MoveNext()) queue.Enqueue(e, keySelector(e.Current));
+                    if (e.MoveNext())
+                    {
+                        var index = Array.BinarySearch(arr, 0, count, e, sourceComparer);
+                        if (index < 0) index = ~index;
+                        if (index < count) Array.Copy(arr, index, arr, index + 1, count - index);
+                        arr[index] = e;
+                        count++;
+                    }
                 }
             }
             finally
@@ -570,5 +585,14 @@ public static class UpdatablePriorityQueueSortedMergeExtensions
                 }
             }
         }
+    }
+
+    internal record class SourceComparer<TItem, TKey>(
+        IComparer<TKey> KeyComparer,
+        Func<TItem, TKey> KeySelector
+    ) : IComparer<IEnumerator<TItem>>
+    {
+        public int Compare(IEnumerator<TItem>? x, IEnumerator<TItem>? y)
+            => KeyComparer.Compare(KeySelector(x!.Current), KeySelector(y!.Current));
     }
 }
