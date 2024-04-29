@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>BenchmarkRun-joined-2024-04-29-10-13-58</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.13.12, Windows 11 (10.0.22631.3447/23H2/2023Update/SunValley3)
+13th Gen Intel Core i7-13800H, 1 CPU, 20 logical and 14 physical cores
+.NET SDK 8.0.204
+  [Host]     : .NET 6.0.29 (6.0.2924.17105), X64 RyuJIT AVX2
+  DefaultJob : .NET 6.0.29 (6.0.2924.17105), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Type           </th><th>Method</th><th>ChunkCount</th><th>Algorithm    </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th>
+</tr>
+</thead><tbody><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>2</td><td>BinaryArray_Sync</td><td>3.576 ms</td><td>0.0541 ms</td><td>0.0506 ms</td><td>3.573 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>2</td><td>BinaryArray_Sync</td><td>11.845 ms</td><td>0.1098 ms</td><td>0.0916 ms</td><td>11.819 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>2</td><td>BinaryLinked_Sync</td><td>4.570 ms</td><td>0.0768 ms</td><td>0.0600 ms</td><td>4.566 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>2</td><td>BinaryLinked_Sync</td><td>13.676 ms</td><td>0.2174 ms</td><td>0.2033 ms</td><td>13.639 ms</td>
+</tr><tr><td>BenchmarksIntAsync</td><td>IntAsync</td><td>2</td><td>PriorityQueue_Async</td><td>6.362 ms</td><td>0.1247 ms</td><td>0.2433 ms</td><td>6.295 ms</td>
+</tr><tr><td>BenchmarksStringAsync</td><td>StringAsync</td><td>2</td><td>PriorityQueue_Async</td><td>16.513 ms</td><td>0.3219 ms</td><td>0.4072 ms</td><td>16.511 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>2</td><td>PriorityQueue_Sync</td><td>2.178 ms</td><td>0.0431 ms</td><td>0.0530 ms</td><td>2.168 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>2</td><td>PriorityQueue_Sync</td><td>10.646 ms</td><td>0.1604 ms</td><td>0.1500 ms</td><td>10.597 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>2</td><td>SortedLinked_Sync</td><td>3.556 ms</td><td>0.0704 ms</td><td>0.1214 ms</td><td>3.516 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>2</td><td>SortedLinked_Sync</td><td>11.885 ms</td><td>0.1541 ms</td><td>0.1286 ms</td><td>11.848 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>2</td><td>SortedList_Sync</td><td>2.955 ms</td><td>0.0220 ms</td><td>0.0184 ms</td><td>2.953 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>2</td><td>SortedList_Sync</td><td>11.244 ms</td><td>0.2146 ms</td><td>0.2554 ms</td><td>11.320 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>2</td><td>SortedSet_Sync</td><td>18.438 ms</td><td>0.2830 ms</td><td>0.2363 ms</td><td>18.517 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>2</td><td>SortedSet_Sync</td><td>34.116 ms</td><td>0.6790 ms</td><td>1.0571 ms</td><td>33.888 ms</td>
+</tr><tr><td>BenchmarksIntAsync</td><td>IntAsync</td><td>2</td><td>SuperLinq_Async</td><td>7.827 ms</td><td>0.1539 ms</td><td>0.2441 ms</td><td>7.757 ms</td>
+</tr><tr><td>BenchmarksStringAsync</td><td>StringAsync</td><td>2</td><td>SuperLinq_Async</td><td>17.932 ms</td><td>0.3539 ms</td><td>0.8814 ms</td><td>17.672 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>2</td><td>SuperLinq_Sync</td><td>1.783 ms</td><td>0.0351 ms</td><td>0.0345 ms</td><td>1.769 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>2</td><td>SuperLinq_Sync</td><td>10.426 ms</td><td>0.2035 ms</td><td>0.1589 ms</td><td>10.448 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>5</td><td>BinaryArray_Sync</td><td>5.202 ms</td><td>0.1039 ms</td><td>0.1020 ms</td><td>5.164 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>5</td><td>BinaryArray_Sync</td><td>21.036 ms</td><td>0.3669 ms</td><td>0.4771 ms</td><td>20.902 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>5</td><td>BinaryLinked_Sync</td><td>6.465 ms</td><td>0.1209 ms</td><td>0.1072 ms</td><td>6.431 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>5</td><td>BinaryLinked_Sync</td><td>21.612 ms</td><td>0.3145 ms</td><td>0.2788 ms</td><td>21.639 ms</td>
+</tr><tr><td>BenchmarksIntAsync</td><td>IntAsync</td><td>5</td><td>PriorityQueue_Async</td><td>6.669 ms</td><td>0.1251 ms</td><td>0.2440 ms</td><td>6.603 ms</td>
+</tr><tr><td>BenchmarksStringAsync</td><td>StringAsync</td><td>5</td><td>PriorityQueue_Async</td><td>29.754 ms</td><td>0.4293 ms</td><td>0.4016 ms</td><td>29.675 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>5</td><td>PriorityQueue_Sync</td><td>2.972 ms</td><td>0.0594 ms</td><td>0.1072 ms</td><td>2.968 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>5</td><td>PriorityQueue_Sync</td><td>26.529 ms</td><td>0.4311 ms</td><td>0.4032 ms</td><td>26.514 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>5</td><td>SortedLinked_Sync</td><td>4.719 ms</td><td>0.0559 ms</td><td>0.0686 ms</td><td>4.700 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>5</td><td>SortedLinked_Sync</td><td>21.141 ms</td><td>0.3073 ms</td><td>0.2875 ms</td><td>21.115 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>5</td><td>SortedList_Sync</td><td>4.354 ms</td><td>0.0574 ms</td><td>0.0479 ms</td><td>4.338 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>5</td><td>SortedList_Sync</td><td>20.834 ms</td><td>0.3911 ms</td><td>0.5354 ms</td><td>20.618 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>5</td><td>SortedSet_Sync</td><td>18.953 ms</td><td>0.3664 ms</td><td>0.4220 ms</td><td>18.927 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>5</td><td>SortedSet_Sync</td><td>49.432 ms</td><td>0.8912 ms</td><td>0.7900 ms</td><td>49.283 ms</td>
+</tr><tr><td>BenchmarksIntAsync</td><td>IntAsync</td><td>5</td><td>SuperLinq_Async</td><td>8.490 ms</td><td>0.1688 ms</td><td>0.3000 ms</td><td>8.390 ms</td>
+</tr><tr><td>BenchmarksStringAsync</td><td>StringAsync</td><td>5</td><td>SuperLinq_Async</td><td>32.972 ms</td><td>0.5199 ms</td><td>0.4609 ms</td><td>32.827 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>5</td><td>SuperLinq_Sync</td><td>3.639 ms</td><td>0.0464 ms</td><td>0.0411 ms</td><td>3.627 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>5</td><td>SuperLinq_Sync</td><td>25.119 ms</td><td>0.2766 ms</td><td>0.2310 ms</td><td>25.024 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>50</td><td>BinaryArray_Sync</td><td>10.435 ms</td><td>0.1802 ms</td><td>0.1685 ms</td><td>10.419 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>50</td><td>BinaryArray_Sync</td><td>41.699 ms</td><td>0.7521 ms</td><td>0.7035 ms</td><td>41.649 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>50</td><td>BinaryLinked_Sync</td><td>16.860 ms</td><td>0.1026 ms</td><td>0.0857 ms</td><td>16.874 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>50</td><td>BinaryLinked_Sync</td><td>46.844 ms</td><td>0.5217 ms</td><td>0.4880 ms</td><td>46.960 ms</td>
+</tr><tr><td>BenchmarksIntAsync</td><td>IntAsync</td><td>50</td><td>PriorityQueue_Async</td><td>8.687 ms</td><td>0.1532 ms</td><td>0.1993 ms</td><td>8.600 ms</td>
+</tr><tr><td>BenchmarksStringAsync</td><td>StringAsync</td><td>50</td><td>PriorityQueue_Async</td><td>68.353 ms</td><td>1.0877 ms</td><td>1.0175 ms</td><td>68.251 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>50</td><td>PriorityQueue_Sync</td><td>5.611 ms</td><td>0.1013 ms</td><td>0.2328 ms</td><td>5.525 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>50</td><td>PriorityQueue_Sync</td><td>65.717 ms</td><td>0.8788 ms</td><td>0.7339 ms</td><td>65.592 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>50</td><td>SortedLinked_Sync</td><td>17.268 ms</td><td>0.3453 ms</td><td>0.8974 ms</td><td>16.862 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>50</td><td>SortedLinked_Sync</td><td>119.624 ms</td><td>2.2445 ms</td><td>2.2044 ms</td><td>119.098 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>50</td><td>SortedList_Sync</td><td>17.669 ms</td><td>0.3261 ms</td><td>0.7751 ms</td><td>17.386 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>50</td><td>SortedList_Sync</td><td>121.325 ms</td><td>2.3761 ms</td><td>2.2226 ms</td><td>120.695 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>50</td><td>SortedSet_Sync</td><td>40.144 ms</td><td>2.6214 ms</td><td>7.6881 ms</td><td>36.948 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>50</td><td>SortedSet_Sync</td><td>107.008 ms</td><td>2.0459 ms</td><td>2.3561 ms</td><td>106.123 ms</td>
+</tr><tr><td>BenchmarksIntAsync</td><td>IntAsync</td><td>50</td><td>SuperLinq_Async</td><td>30.999 ms</td><td>0.4297 ms</td><td>0.3809 ms</td><td>30.857 ms</td>
+</tr><tr><td>BenchmarksStringAsync</td><td>StringAsync</td><td>50</td><td>SuperLinq_Async</td><td>238.153 ms</td><td>2.2117 ms</td><td>1.9606 ms</td><td>238.665 ms</td>
+</tr><tr><td>BenchmarksIntSync</td><td>IntSync</td><td>50</td><td>SuperLinq_Sync</td><td>30.338 ms</td><td>0.6066 ms</td><td>1.3316 ms</td><td>30.104 ms</td>
+</tr><tr><td>BenchmarksStringSync</td><td>StringSync</td><td>50</td><td>SuperLinq_Sync</td><td>223.290 ms</td><td>1.9667 ms</td><td>1.6423 ms</td><td>222.984 ms</td>
+</tr></tbody></table>
+</body>
+</html>
